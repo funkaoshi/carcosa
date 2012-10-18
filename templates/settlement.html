@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='hex'>
+    <div class='inner'>
+        <p class='location'>{{ hex }}</p>
+        {% include 'settlement_description.html' %}
+        <p class='description'>
+            Of the 800 hex descriptions in <em>Carcosa</em> 233 describe
+            a village, citadel, castle, or monastery. 
+        </p>
+    </div>
+</div>
+{% endblock %}

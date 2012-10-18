@@ -1,0 +1,67 @@
+body {
+    background: url("/static/ricepaper2.png")
+}
+
+#container {
+    width: 540px;
+    margin: 0 auto 0 auto;
+    padding: 25px;
+    font-family: 'Simonetta', serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+h1 img {
+    vertical-align: bottom;
+}
+
+/* Hex Description */
+
+.hex {
+    border-top: 2px solid #9DA5D3;
+    margin:0; padding:0;
+    margin-top:24px;
+    clear: both;
+}
+
+.hex .inner {
+    border-top: 1px solid #C3C7E0;
+    padding: 2px;
+}
+
+.hex .inner p.location {
+    float: left;
+    padding-top: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hex .inner p.description {
+    float: right;
+    padding-top: 6px;
+    text-align: justify;
+    width: 400px;
+}
+
+.hex .inner p.description + p.description {
+    border-top: 2px solid #A2C485;
+}
+
+footer {
+    margin: 200px auto;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    width: 400px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 18px;
+    color: #999;
+}
+.footer a {
+    color: #999;
+    font-weight: bold;
+}
+
+a {
+    color: #518C51
+}

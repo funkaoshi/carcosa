@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='hex'>
+    <div class='inner'>
+        <p class='location'>{{ hex }}</p>
+        {% include 'spawn_description.html' %}
+    </div>
+</div>
+{% endblock %}
