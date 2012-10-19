@@ -73,7 +73,7 @@ class Leader(object):
         """
         Reads a list of names. Ignore the last empty entry.
         """
-        return open(filename).read().split('\n')[:-1]
+        return open(filename).read().split('\n')
     
     NOUNS = read_file('names_nouns.txt')
     ADJECTIVES = read_file('names_adjectives.txt')

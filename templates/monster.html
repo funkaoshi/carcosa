@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='hex'>
+    <div class='inner'>
+        <p class='location'>{{ hex }}</p>
+        {% include 'monster_description.html' %}
+        <p class='description'>
+            About 10% of the hex descriptions in Carcosa are simple
+            monster encounters.
+        </p>        
+    </div>
+</div>
+{% endblock %}

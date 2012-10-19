@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='hex'>
+    <div class='inner'>
+        <p class='location'>{{ hex }}</p>
+        {% include 'weird_description.html' %}
+        <p class='description'>
+            Most hex descriptions in Carcosa are kind of crazy.
+        </p>        
+    </div>
+</div>
+{% endblock %}
