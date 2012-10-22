@@ -3,7 +3,7 @@
 {% block content %}
 <div id="header" class='hex'>
     <div class='inner'>
-        <p class='location'>1517</p>
+        <p class='location'>1507</p>
         <p class='description'>
             On a lifeless island of black stone stands the alien city of Carcosa.
         </p>
@@ -11,7 +11,8 @@
             This is <strong>Random Carcosa</strong>. You can use this
             website to generate random hex descriptions for a world
             derived from the information within and aesthetics of
-            Geoffery McKinney's <em>Carcosa</em>.
+            Geoffery McKinney's <em>Carcosa</em>. This is very much a 
+            <strong>work in progress</strong>.
         </p>
     </div>
 </div>
@@ -20,9 +21,6 @@
         <p class='location'>2606</p>
         {% include 'weird_description.html' %}
         {% include 'monster_description.html' %}
-        <p class='description'>
-            This is very much a <strong>work in progress</strong>.
-        </p>
     </div>
 </div>
 <div class='hex'>
@@ -30,8 +28,8 @@
         <p class='location'>{{ hex_a }}</p>
         {% include 'spawn_description.html' %}
         <p class='description'>
-            About 25% of the hexes described in <em>Carcosa</em> mention a 
-            <a href="/spawn/">spawn of Shub-Niggurath</a>.
+            There are 103 <a href="/spawn/">Spawn of Shub-Niggurath</a> 
+            encounters described in <em>Carcosa</em>.
         </p>
     </div>
 </div>
@@ -40,8 +38,9 @@
         <p class='location'>{{ hex_b }}</p>
         {% include 'settlement_description.html' %}
         <p class='description'>
-            Of the 800 hex descriptions in <em>Carcosa</em> 233 describe
-            a <a href="/settlement/">village, citadel, castle, or monastery</a>. 
+            Of the 800 hex descriptions in <em>Carcosa</em> a little more than
+            a quarter describe a <a href="/settlement/">village, citadel, 
+            castle, or monastery</a>. 
         </p>        
     </div>
 </div>

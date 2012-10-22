@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.config.from_object(__name__)
 
 def random_hex():
-    return "%2d%02d" % (dice.d(40), dice.d(40))
+    return "%02d%02d" % (dice.d(40), dice.d(40))
 
 @app.route('/', methods=['GET'])
 def index():
