@@ -40,6 +40,9 @@ h1 img {
     float: right;
     padding-top: 6px;
     text-align: justify;
+    text-justify: newspaper;
+    hyphens: auto;
+    -webkit-hyphens: auto;
     width: 400px;
 }
 
