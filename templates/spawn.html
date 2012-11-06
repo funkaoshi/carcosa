@@ -2,9 +2,11 @@
 
 {% block content %}
 <div class='hex'>
-    <div class='inner'>
-        <p class='location'>{{ hex }}</p>
-        {% include 'spawn_description.html' %}
-    </div>
+    <p class='location'>{{ hex }}</p>
+    {{ spawn.description|safe }}
+    <p class='description'>
+        There are 103 <a href="/spawn/">Spawn of Shub-Niggurath</a>
+        encounters described in <em>Carcosa</em>.
+    </p>
 </div>
 {% endblock %}

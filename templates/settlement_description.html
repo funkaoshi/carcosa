@@ -1,13 +1,13 @@
 <p class='description'>
-    {{ settlement.kind }} of {{ settlement.population }} 
-    {{ settlement.colour }} Men 
+    {{ settlement.kind }} of {{ settlement.population }}
+    {{ settlement.colour }} Men
     {% if not settlement.leader %}
         who are currently leaderless.
     {% else %}
         {% if settlement.kind == 'Village' %}ruled{% else %}led{% endif %}
-        by {% if settlement.leader.name %}"{{ settlement.leader.name }},"{% endif %} a 
-        {{ settlement.leader.alignment }} 
-        {{ settlement.leader.level }}-level 
+        by {% if settlement.leader.name %}"{{ settlement.leader.name }},"{% endif %} a
+        {{ settlement.leader.alignment }}
+        {{ settlement.leader.level }}-level
         {{ settlement.leader.character_class }}.
     {% endif %}
 </p>

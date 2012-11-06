@@ -1,4 +1,5 @@
-import random 
+import random
+from flask import render_template
 
 from dice import xdy
 
@@ -6,9 +7,9 @@ class Monster(object):
     """
     Generates a simple random monster encounter. About 12% of the hex
     descriptions in Carcosa are simple random monster encounters. (1 Dolm Ooze,
-    12 Irrational Space Aliens, etc.) 
+    12 Irrational Space Aliens, etc.)
     """
-    
+
     MONSTERS = [
         # rare
         (1, 3, "B'yakhee", "B'yakhees"),
@@ -23,7 +24,12 @@ class Monster(object):
         (1, 1, "Spawn of Yog-Sothoth", "Spawn of Yog-Sothoth"),
         (1, 4, "Unquiet Worm", "Unquiet Worms"),
         (6, 6, "Diseased Guardian", "Diseased Guardians"),
-        
+        (1, 6, "Pterodactyl", "Pterodactyls"), 
+        (2, 8, "Stegosaurs", "Stegosauruses"),
+        (3, 4, "Triceratops", "Triceratops"),
+        (1, 2, "Tyrannosaurus Rex", "Tyrannosaurus Rexes"),
+        (2, 6, "Velociraptor", "Velociraptors"),
+
         # common
         (1, 1, "Dolm Ooze", "Dolm Ooze"),
         (1, 1, "Dolm Pudding", "Dolm Pudding"),
@@ -31,10 +37,14 @@ class Monster(object):
         (1, 12, "Mummy", "Mummies"),
         (1, 1, "Ulfire Jelly", "Ulfire Jelly"),
     ]
-    
+
     def __init__(self):
         self.count, self.monster = self.get_monster()
-        
+
+    @property
+    def description(self):
+        return render_template("monster_description.html", monster=self)
+
     def get_monster(self):
         numdie, dietype, monster, monsters = random.choice(Monster.MONSTERS)
         count = xdy(numdie, dietype)

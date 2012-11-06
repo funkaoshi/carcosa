@@ -2,13 +2,11 @@
 
 {% block content %}
 <div class='hex'>
-    <div class='inner'>
-        <p class='location'>{{ hex }}</p>
-        {% include 'monster_description.html' %}
-        <p class='description'>
-            About 10% of the hex descriptions in Carcosa are simple
-            monster encounters.
-        </p>        
-    </div>
+    <p class='location'>{{ hex }}</p>
+    {{ monster.description|safe }}
+    <p class='description'>
+        About 10% of the hex descriptions in Carcosa are simple
+        <a href='/monster/'>monster encounters</a>.
+    </p>
 </div>
 {% endblock %}

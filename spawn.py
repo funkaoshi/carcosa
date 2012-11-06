@@ -1,4 +1,7 @@
 import random
+from flask import render_template
+
+import colour
 from dice import d, xdy
 
 class Spawn(object):
@@ -13,9 +16,13 @@ class Spawn(object):
         self._get_features()
         self.powers = self._get_powers()
         self.immunities = self._get_immunities()
-        
+
     @property
     def description(self):
+        return render_template("spawn_description.html", spawn=self)
+
+    @property
+    def monster_description(self):
         desc = []
         if self.colour[0] in ['o', 'u']:
             desc.append('an')
@@ -45,9 +52,9 @@ class Spawn(object):
             return d(10)
         else:
             return xdy(2,6)
-            
+
     def _get_armor_class(self):
-        roll = d(20)        
+        roll = d(20)
         if roll <= 4:
             return 12
         elif roll <= 8:
@@ -64,7 +71,7 @@ class Spawn(object):
             return 19
         else:
             return 20
-            
+
     def _get_movement(self):
         """
         Determine type of movement: flying, swimming, etc.
@@ -89,7 +96,7 @@ class Spawn(object):
             return "%s" % moves[0][1]
         else:
             return " / ".join("%s [%s]" % (d, m) for m, d in moves)
-        
+
     def _get_movement_rate(self):
         """
         Return movement rate in feet.
@@ -111,7 +118,7 @@ class Spawn(object):
             return 210
         else:
             return 240
-            
+
     def _get_alignment(self):
         roll = d(8)
         if roll <= 6:
@@ -120,16 +127,16 @@ class Spawn(object):
             return 'Neutral [intelligent]'
         else:
             return 'Neutral [unintelligent]'
-              
+
     def _get_features(self):
         self.body = random.choice(Spawn.FORMS)
         roll = d(16)
         if roll >= 15:
-            colours = random.sample(Spawn.COLOURS[1:], d(3) + 1)
+            colours = random.sample(colour.COLOURS[1:], d(3) + 1)
             colours = ', '.join(colours[:-1]) + ' and ' + colours[-1]
             self.colour = colours
         else:
-            self.colour = random.choice(Spawn.COLOURS)
+            self.colour = colour.colour()
         self.hide = random.choice(Spawn.HIDES)
         self.eyes = d(8) - 1
         if self.eyes == 0:
@@ -137,7 +144,7 @@ class Spawn(object):
         elif self.eyes == 7:
             self.eyes = 'multiple/insectile'
         self.mouth = random.choice(Spawn.MOUTHS)
-    
+
     def _get_powers(self):
         roll = d(100)
         if roll <= 84:
@@ -146,7 +153,7 @@ class Spawn(object):
             return random.sample(Spawn.POWERS, 2)
         else:
             return [random.choice(Spawn.POWERS)]
-            
+
     def _get_immunities(self):
         roll = d(20)
         if roll <= 10:
@@ -155,7 +162,7 @@ class Spawn(object):
             return random.sample(Spawn.IMMUNITIES, 2)
         else:
             return [random.choice(Spawn.IMMUNITIES)]
-        
+
     def _get_hd(self):
         roll = d(20)
         if roll <= 3:
@@ -174,23 +181,19 @@ class Spawn(object):
             return 7
         else:
             return roll - 10
-    
-    FORMS = ['annelidoid', 'plant', 'fungoid', 'batrachian', 'arachnoid', 
-            'quadruped', 'octopoid', 'octopoid', 'insectoid', 'crustacean', 
-            'amoeboid', 'amoeboid', 'arboreoid', 'avioid', 'icthyoid', 
+
+    FORMS = ['annelidoid', 'plant', 'fungoid', 'batrachian', 'arachnoid',
+            'quadruped', 'octopoid', 'octopoid', 'insectoid', 'crustacean',
+            'amoeboid', 'amoeboid', 'arboreoid', 'avioid', 'icthyoid',
             'hexapod', 'anthropoid', 'ophidioid', 'ooze/slime', 'ooze/slime']
-       
-    COLOURS = ['colourless', 'white', 'black', 'blue', 'purple', 'red', 
-              'organge', 'yellow', 'green', 'dolm', 'ulfire', 'jale',
-              'brown', 'gray']            
-    
+
     HIDES = ['smooth', 'smooth', 'smooth', 'suckered', 'suckered', 'suckered',
              'scaled', 'scaled', 'feathered', 'furred']
-    
-    MOUTHS = ['no mouth', 'multiple mouths', 'a toothed mouth', 
-              'a beaked mouth', 'a suckered mouth', 
+
+    MOUTHS = ['no mouth', 'multiple mouths', 'a toothed mouth',
+              'a beaked mouth', 'a suckered mouth',
               'a circular gaping maw']
-              
+
     POWERS = [
        "Its touch causes paralysis.",
        "The sight of it drives insane.",
@@ -208,7 +211,7 @@ class Spawn(object):
        "The creature is extremely hot: 1 die damage per round to all within 20'",
        "The creature is psionic: (1-8 powers, 1-8 times per day)"
     ]
-    
+
     IMMUNITIES = [
         'Immune to normal weapons.',
         'Immune to cold.',

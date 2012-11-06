@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Random Carcosa</h1>
+<div class='write-up'>
+    <p>This is very much a <strong>work in progress</strong>. (As evidenced by 
+    the repeating entries you might see below.) Anyway, here are {{ count }}
+    random hexes.</p>
+</div>
+{% for hex in hexes|slice(count) %}
+<div class='hex'>
+    <p class='location'>
+      {{ "%02d"|format(27 + (loop.index - 1) / 16) }}{{ "%02d"|format(1 + (loop.index - 1) % 16) }}
+    </p>
+    {% for item in hex %}
+    {{ item.description|safe }}
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock %}
