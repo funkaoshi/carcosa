@@ -18,36 +18,40 @@ app.config.from_object(__name__)
 def random_hex():
     return "%02d%02d" % (dice.d(40), dice.d(40))
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
     return render_template("index.html",
             hex_a=random_hex(), hex_b=random_hex(),
             hex_c=random_hex(), hex_d=random_hex(),
             spawn=spawn.Spawn(), settlement=settlement.Settlement(),
             monster=monster.Monster(), weird=weird.WierdGenerator().weird())
+            
+@app.route('/about/')
+def about():
+    return render_template("about.html")
 
-@app.route('/settlement/', methods=['GET'])
+@app.route('/settlement/')
 def make_settlement():
    return render_template("settlement.html",
            hex=random_hex(), settlement=settlement.Settlement())
 
-@app.route('/spawn/', methods=['GET'])
+@app.route('/spawn/')
 def make_spawn():
    return render_template("spawn.html",
            hex=random_hex(), spawn=spawn.Spawn())
 
-@app.route('/monster/', methods=['GET'])
+@app.route('/monster/')
 def make_monster():
    return render_template("monster.html",
            hex=random_hex(), monster=monster.Monster())
 
-@app.route('/weird/', methods=['GET'])
+@app.route('/weird/')
 def make_weird():
    return render_template("weird.html",
            hex=random_hex(), weird=weird.WierdGenerator().weird())
 
 @app.route('/random/', defaults={'count': 32})
-@app.route('/random/<int:count>/', methods=['GET'])
+@app.route('/random/<int:count>/')
 def make_random(count):
     weird_gen = weird.WierdGenerator()
     random_hexes = []

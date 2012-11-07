@@ -1,18 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id="header" class='hex'>
-    <p class='location'>1507</p>
-    <p class='description'>
-        On a lifeless island of black stone stands the alien city of Carcosa.
-    </p>
-    <p class='description'>
+<h1>On a lifeless island of black stone<br>stands the alien city of Carcosa.</h1>
+<div class='write-up'>
+    <p>
         This is <strong>Random Carcosa</strong>. You can use this website to
-        generate <a href="/random/">random hex descriptions</a> for a world
-        derived from the information within and aesthetics of Geoffery
-        McKinney's <em>Carcosa</em>. This is very much a <strong>work in
-        progress</strong>.
+        generate <a href="/random/">random hex descriptions</a> for a world derived
+        from the information within and aesthetics of Geoffery McKinney's
+        <em>Carcosa</em>. <a href="/about/">What's this all about?</a>
     </p>
+    <p>This is very much a <strong>work in progress</strong>.</p>
 </div>
 <div class='hex'>
     <p class='location'>{{ hex_a }}</p>
