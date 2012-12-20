@@ -39,29 +39,6 @@ p:first-child {
     text-indent: 0;
 }
 
-th {
-    border-bottom: 2px solid black;
-    text-align: left;
-}
-th:first-child {
-    text-align: center;
-}
-th, td {
-    padding: 2px 7px;
-}
-td:first-child {
-    vertical-align: top;
-    text-align: center;
-    padding: 2px 20px;
-    font-weight: bold;
-}
-tr:nth-child(odd) {
-    background-color: #E6E7F3;
-}
-tr:first-child {
-    background-color: transparent;
-}
-
 /* Hex Description */
 
 .hex {
@@ -74,13 +51,31 @@ tr:first-child {
 .hex p {
     text-indent: 0;
 }
-.hex p.location {
+.hex p.location,
+.hex .left {
     float: left;
+    width: 120px;
     padding-top: 8px;
-    font-size: 18px;
-    font-weight: bold;
+    font-weight: bold;        
 }
-.hex p.description, .hex p.restock {
+.hex p.left, 
+.hex .left p {
+    text-align: left;
+}
+.hex .left p {
+    font-size: 14px;
+    line-height: 18px;    
+}
+.hex .left .subhead {
+    font-size:14px;
+    line-height: 16px;
+    font-weight: normal;
+}
+.hex p.location {
+    font-size: 18px;
+}
+.hex p.description,
+.hex p.restock {
     float: right;
     padding: 6px 0;
     width: 400px;
@@ -93,14 +88,51 @@ tr:first-child {
     border-top: 1px solid #CCC;
     padding-top: 16px;
 }
+
+
 .hex table {
     float: right;
     width: 400px;
+}
+.hex table th {
+    border-bottom: 2px solid black;
+    text-align: left;
+}
+th:first-child {
+    text-align: center;
+}
+.hex table th, 
+.hex table td {
+    padding: 2px 7px;
+}
+
+.hex table.random-table td:first-child {
+    vertical-align: top;
+    text-align: center;
+    padding: 2px 20px;
+    font-weight: bold;
+}
+.hex table.random-table tr:nth-child(odd) {
+    background-color: #E6E7F3;
+}
+.hex table.random-table tr:first-child {
+    background-color: transparent;
+}
+
+.hex table.monster-table td:first-child,
+.hex table.monster-table {
+    text-align: left;
+    font-weight: normal;
+    margin-top:8px;
+}
+.hex table.monster-table tr:nth-child(even) {
+    background-color: #E6E7F3;
 }
 
 .clear {
     clear:both;
 }
+
 .footer {
     padding-top: 10px;
     border-top: 1px solid #ccc;
