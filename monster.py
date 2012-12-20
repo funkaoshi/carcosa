@@ -10,6 +10,7 @@ class Monster(object):
     12 Irrational Space Aliens, etc.)
     """
 
+    # TODO: Load from file or table
     MONSTERS = [
         # rare
         (1, 3, "B'yakhee", "B'yakhees"),

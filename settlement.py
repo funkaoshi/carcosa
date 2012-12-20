@@ -133,7 +133,7 @@ class Leader(object):
             return "11th"
         else:
             return random.choice(["12th", "12th", "12th", "13th", "13th",
-                                 "14th", "15th", "16th"])
+                                  "14th", "15th", "16th"])
 
     def get_name(self, colour):
         roll = d(100)
