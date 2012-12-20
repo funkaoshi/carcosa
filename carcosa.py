@@ -8,10 +8,6 @@ import spawn
 import monster
 import weird
 
-# configuration
-SECRET_KEY = 'Y\xf6\xf2j\xc9\xc5\xbc\xde{\xae\x9a\xc8\x8dZ0\x9e\x14\xb6\x90\xd7\x02\x03\xf0\x1a'
-DEBUG = True
-
 app = Flask(__name__)
 app.config.from_object(__name__)
 
