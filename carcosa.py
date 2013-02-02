@@ -7,9 +7,10 @@ import settlement
 import spawn
 import monster
 import weird
+import settings
 
 app = Flask(__name__)
-app.config.from_object(__name__)
+app.config.from_object(settings)
 
 def random_hex():
     return "%02d%02d" % (dice.d(40), dice.d(40))
@@ -21,10 +22,14 @@ def index():
             hex_c=random_hex(), hex_d=random_hex(),
             spawn=spawn.Spawn(), settlement=settlement.Settlement(),
             monster=monster.Monster(), weird=weird.WierdGenerator().weird())
-            
+
 @app.route('/about/')
 def about():
     return render_template("about.html")
+
+@app.route('/roll/')
+def roll():
+    return render_template("roll.html", dcarcosa=dice.carcosa())
 
 @app.route('/settlement/')
 def make_settlement():

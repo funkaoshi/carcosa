@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}dCarcosa{% endblock %}
+
+{% block content %}
+<h1>dCarcosa!</h1>
+<div class='write-up' id='dcarcosa'>
+    <div>
+    <p id='result'>{{ dcarcosa.result }}</p>
+    <p id='rolls'>
+        {% for d, roll in dcarcosa.rolls.items() %}
+        <span class='dice'>d{{ d }}</span>:
+        <strong>{{ roll }}</strong>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    </div>
+    <p>
+        Carcosa has some zanny dice rules that can be fun in play. This virtual
+        dice roller isn't going to be nearly as much fun as rolling all the dice,
+        but it will get the job done.
+    </p>
+</div>
+{% endblock %}

@@ -129,6 +129,20 @@ th:first-child {
     background-color: #E6E7F3;
 }
 
+/* dCarcosa */
+
+#dcarcosa #result {
+    text-align: center;
+    margin: 20px;
+    font-size: 56px;
+    line-height: 64px;
+}
+
+#dcarcosa #rolls {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
 .clear {
     clear:both;
 }

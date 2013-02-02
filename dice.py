@@ -5,3 +5,18 @@ def d(die):
 
 def xdy(x,y):
     return sum(d(y) for i in range(x))
+
+def carcosa():
+    rolls = dict((x, d(x)) for x in [4, 6, 8, 10, 12, 20])
+    twenty = rolls[20]
+    if 1 <= twenty <= 4:
+        rolled = 4
+    elif 5 <= twenty <= 8:
+        rolled = 6
+    elif 9 <= twenty <= 12:
+        rolled = 8
+    elif 13 <= twenty <= 16:
+        rolled = 10
+    elif 16 <= twenty <= 20:
+        rolled = 12
+    return {'rolls': rolls, 'rolled': rolled, 'result': rolls[rolled]}
