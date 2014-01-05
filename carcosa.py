@@ -33,23 +33,19 @@ def roll():
 
 @app.route('/settlement/')
 def make_settlement():
-   return render_template("settlement.html",
-           hex=random_hex(), settlement=settlement.Settlement())
+   return render_template("settlement.html", hex=random_hex(), settlement=settlement.Settlement())
 
 @app.route('/spawn/')
 def make_spawn():
-   return render_template("spawn.html",
-           hex=random_hex(), spawn=spawn.Spawn())
+   return render_template("spawn.html", hex=random_hex(), spawn=spawn.Spawn())
 
 @app.route('/monster/')
 def make_monster():
-   return render_template("monster.html",
-           hex=random_hex(), monster=monster.Monster())
+   return render_template("monster.html", hex=random_hex(), monster=monster.Monster())
 
 @app.route('/weird/')
 def make_weird():
-   return render_template("weird.html",
-           hex=random_hex(), weird=weird.WierdGenerator().weird())
+   return render_template("weird.html", hex=random_hex(), weird=weird.WierdGenerator().weird())
 
 @app.route('/random/', defaults={'count': 32})
 @app.route('/random/<int:count>/')

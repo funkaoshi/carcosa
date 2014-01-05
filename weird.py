@@ -10,20 +10,20 @@ import dice
 class WierdGenerator(object):
 
     WEIRD = open('weird.txt').read().split('\n')
-    
+
     def __init__(self):
         self.init_weird()
-        
+
     def init_weird(self):
         self._weird = copy.copy(WierdGenerator.WEIRD)
         random.shuffle(self._weird)
-    
+
     def weird(self):
         if not self._weird:
             return self.init_weird()
         entry = self._weird.pop().format(colour=colour.colour(),
                     hex="%02d%02d" % (dice.d(26), dice.d(16)))
-        return Weird(entry) 
+        return Weird(entry)
 
 
 class Weird(object):

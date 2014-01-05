@@ -9,14 +9,12 @@ class Settlement(object):
     """
     Generate a random Carcosa themed settlement.
         * There are 800 keyed encounters in Carcosa.
-        * 233ish of them describe villages, citadels, castles or monasteries.
-        * Monastery: 4 (1-2), Castle: 41 (3-20), Village: 138,
-          Citadel: 50 (21-42), Village (42-100)
+        * 231 of them describe villages, citadels, castles or monasteries.
+        * Village: 137 (59%), Citadel: 49 (21%), Castle: 41 (18%), Monastery: 4 (2%)
         * Race: 2% chance for mutated race, otherwise even distribution.
           (More or less.)
-        * Almost all villages are "ruled" by someone, all castles/citadels
-          are "led" by someone. (Looking into this more carefully, it looks
-          like Castles / Citadels are "led", villages are "ruled".
+        * All villages are "ruled" by someone, all castles/citadels
+          are "led" by someone.
         * There is a 1% chance the settlement is leaderless.
     """
 
@@ -36,14 +34,14 @@ class Settlement(object):
             return "Monastery"
         elif roll <= 20:
             return "Castle"
-        elif roll <= 42:
+        elif roll <= 43:
             return "Citadel"
         else:
             return "Village"
 
     def get_colour(self):
         roll = d(100)
-        if roll <= 2:
+        if roll <= 1:
             return "Mutated"
         return colour.colour()
 
@@ -60,7 +58,7 @@ class Settlement(object):
 
     def get_leader(self, kind):
         roll = d(100)
-        if roll <= 2:
+        if roll <= 1:
             return None
         return Leader(kind)
 
@@ -91,19 +89,19 @@ class Leader(object):
 
     def get_class(self, kind):
         roll = d(100)
-        if roll == 100:
+        if roll <= 1:
             return "Spawn of Shub-Niggurath"
-        if roll <= 77:
+        elif roll <= 77:
             return "Fighter" if kind != "Monastery" else "Sorcerer"
         else:
             return "Sorcerer" if kind != "Monastery" else "Fighter"
 
     def get_alignment(self):
         roll = d(100)
-        if roll <= 29:
-            return "Chaotic"
-        elif roll <= 81:
+        if roll <= 50:
             return "Neutral"
+        elif roll <= 80:
+            return "Chaotic"
         else:
             return "Lawful"
 
