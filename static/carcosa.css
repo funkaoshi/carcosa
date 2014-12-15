@@ -6,7 +6,7 @@ body {
     width: 540px;
     margin: 0 auto 0 auto;
     padding: 25px;
-    font-family: 'Simonetta', serif;  /* Caslon Pro */ 
+    font-family: 'Simonetta', serif;  /* Caslon Pro */
     font-size: 18px;
     line-height: 24px;
 }
@@ -45,6 +45,14 @@ p:first-child {
     text-indent: 0;
 }
 
+ol, ul {
+    margin-top: 1em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
 /* Hex Description */
 
 .hex {
@@ -62,15 +70,15 @@ p:first-child {
     float: left;
     width: 120px;
     padding-top: 8px;
-    font-weight: bold;        
+    font-weight: bold;
 }
-.hex p.left, 
+.hex p.left,
 .hex .left p {
     text-align: left;
 }
 .hex .left p {
     font-size: 14px;
-    line-height: 18px;    
+    line-height: 18px;
 }
 .hex .left .subhead {
     font-size:14px;
@@ -107,12 +115,13 @@ p:first-child {
 th:first-child {
     text-align: center;
 }
-.hex table th, 
+.hex table th,
 .hex table td {
     padding: 2px 7px;
 }
 
-.hex table.random-table td:first-child {
+.hex table.random-table td:first-child,
+.hex table.random-table th:first-child {
     vertical-align: top;
     text-align: center;
     padding: 2px 20px;
