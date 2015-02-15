@@ -24,6 +24,9 @@ h1 {
     font-size: 32px;
     margin-bottom: 1em;
 }
+h2, h3, h4 {
+  margin-top: 1em;
+}
 
 a {
     color: #518C51;

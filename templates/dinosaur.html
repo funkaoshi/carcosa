@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mutant Dinosaur</h1>
+<div class='hex'>
+    <p class='location'>{{ hex }}</p>
+    {{ dinosaur.description|safe }}
+    <p class='description'>
+        Several mutant dinosaurs are described in Carcosa.
+    </p>
+</div>
+{% endblock %}

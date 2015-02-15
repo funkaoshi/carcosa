@@ -3,6 +3,7 @@ import random
 from flask import render_template, Flask
 
 import dice
+import dinosaur
 import settlement
 import spawn
 import monster
@@ -20,8 +21,10 @@ def index():
     return render_template("index.html",
             hex_a=random_hex(), hex_b=random_hex(),
             hex_c=random_hex(), hex_d=random_hex(),
+            hex_e=random_hex(),
             spawn=spawn.Spawn(), settlement=settlement.Settlement(),
-            monster=monster.Monster(), weird=weird.WierdGenerator().weird())
+            dinosaur=dinosaur.Dinosaur(), monster=monster.Monster(),
+            weird=weird.WierdGenerator().weird())
 
 @app.route('/about/')
 def about():
@@ -43,6 +46,11 @@ def make_spawn():
 def make_monster():
    return render_template("monster.html", hex=random_hex(), monster=monster.Monster())
 
+@app.route('/dinosaur/')
+def make_dinosaur():
+   return render_template("dinosaur.html", hex=random_hex(), dinosaur=dinosaur.Dinosaur())
+
+
 @app.route('/weird/')
 def make_weird():
    return render_template("weird.html", hex=random_hex(), weird=weird.WierdGenerator().weird())
@@ -60,6 +68,8 @@ def make_random(count):
             random_hexes.append(settlement.Settlement())
         elif roll <= 83:
             random_hexes.append(spawn.Spawn())
+        elif roll <= 88:
+            random_hexes.append(dinosaur.Dinosaur())
         else:
             random_hexes.append(monster.Monster())
     return render_template("random.html", hexes=random_hexes,

@@ -1,4 +1,5 @@
 <p class='description'>
+    {% if not spawn.unique %}{{ spawn.number }}{% endif %}
     Spawn of Shub-Niggurath (AC {{ spawn.ac }},  MV {{ spawn.move }},
     HD {{ spawn.hd }}, {{ spawn.alignment }}): {{ spawn.monster_description }}.
     {% for power in spawn.powers %}{{ power }} {% endfor %}

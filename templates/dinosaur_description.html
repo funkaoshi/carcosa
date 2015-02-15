@@ -1,0 +1,9 @@
+<p class='description'>
+    {% if dinosaur.number > 1 %}{{ dinosaur.number }}{% endif %}
+    Mutant {{ dinosaur.name }}
+    (AC {{ dinosaur.ac }},  MV {{ dinosaur.move }}, HD {{ dinosaur.hd }}, {{ dinosaur.alignment }}{% if self.attacks %}, dinosaur.attacks{% endif %}).
+    {{ dinosaur.hide }} {{ dinosaur.colour }} hide.
+    {{ dinosaur.monster_description }}
+    {% for power in dinosaur.powers %}{{ power }} {% endfor %}
+    {% for immune in dinosaur.immunities %}{{ immune }} {% endfor %}
+</p>
