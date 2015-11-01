@@ -4,11 +4,13 @@ from flask import render_template, Flask
 
 import dice
 import dinosaur
+import monster
+import settings
 import settlement
 import spawn
-import monster
+import weapon
 import weird
-import settings
+
 
 app = Flask(__name__)
 app.config.from_object(settings)
@@ -50,10 +52,13 @@ def make_monster():
 def make_dinosaur():
    return render_template("dinosaur.html", hex=random_hex(), dinosaur=dinosaur.Dinosaur())
 
-
 @app.route('/weird/')
 def make_weird():
    return render_template("weird.html", hex=random_hex(), weird=weird.WierdGenerator().weird())
+
+@app.route('/weapon/')
+def make_weapon():
+    return render_template("weapon.html", hex=random_hex(), weapon=weapon.Weapon())
 
 @app.route('/random/', defaults={'count': 32})
 @app.route('/random/<int:count>/')

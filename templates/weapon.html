@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Space Alien Armament</h1>
+<div class='hex'>
+    <p class='location'>{{ hex }}</p>
+    <p class='description'>
+    You have found a Space Alien {{ weapon.weapon }} (Range: {{ weapon.range}}, Damage: {{ weapon.damage }} dice, Ammo Dice: {{ weapon.charges }}). {% if not weapon.special %}The weapon fires {{ weapon.projection_type }} in a {{ weapon.pattern }} pattern. {{ weapon.element }} based.{% else %}The weapon {{ weapon.special }}.{% endif %}
+    </p>
+</div>
+{% endblock %}
