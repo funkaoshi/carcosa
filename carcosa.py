@@ -2,6 +2,7 @@ import random
 
 from flask import render_template, Flask
 
+import colour
 import dice
 import dinosaur
 import monster
@@ -23,9 +24,10 @@ def index():
     return render_template("index.html",
             hex_a=random_hex(), hex_b=random_hex(),
             hex_c=random_hex(), hex_d=random_hex(),
-            hex_e=random_hex(),
+            hex_e=random_hex(), hex_f=random_hex(),
             spawn=spawn.Spawn(), settlement=settlement.Settlement(),
             dinosaur=dinosaur.Dinosaur(), monster=monster.Monster(),
+            title=settlement.Leader.get_name(colour.colour()),
             weird=weird.WierdGenerator().weird())
 
 @app.route('/about/')
@@ -39,6 +41,10 @@ def roll():
 @app.route('/settlement/')
 def make_settlement():
    return render_template("settlement.html", hex=random_hex(), settlement=settlement.Settlement())
+
+@app.route('/title/')
+def make_title():
+    return render_template("title.html", hex=random_hex(), title=settlement.Leader.get_name(colour.colour()))
 
 @app.route('/spawn/')
 def make_spawn():

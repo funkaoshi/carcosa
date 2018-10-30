@@ -1,4 +1,5 @@
 import random
+import sys
 from flask import render_template
 
 import colour
@@ -85,7 +86,7 @@ class Leader(object):
         self.character_class = self.get_class(settlement.kind)
         self.alignment = self.get_alignment()
         self.level = self.get_level()
-        self.name = self.get_name(settlement.colour)
+        self.name = Leader.get_name(settlement.colour) if d(100) > 65 else None
 
     def get_class(self, kind):
         roll = d(100)
@@ -133,11 +134,8 @@ class Leader(object):
             return random.choice(["12th", "12th", "12th", "13th", "13th",
                                   "14th", "15th", "16th"])
 
-    def get_name(self, colour):
-        roll = d(100)
-        if roll > 65:
-            return None
-
+    @staticmethod
+    def get_name(colour):
         adjective = random.choice(Leader.ADJECTIVES)
         noun = random.choice(Leader.NOUNS)
         description = random.choice(Leader.DESCRIPTIONS)
@@ -166,4 +164,8 @@ class Leader(object):
         if not name[0] in ['He', 'Her', 'It', 'She', 'Lady']:
             name = ['the'] + name
         return ' '. join(name)
+
+if __name__ == '__main__':
+    for _ in xrange(int(sys.argv[1])):
+        print "%s," % (Leader.get_name(colour.colour())),
 

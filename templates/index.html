@@ -43,13 +43,20 @@
 </div>
 <div class='hex'>
     <p class='location'>{{ hex_d }}</p>
+    <p class="description">You meet "{{ title|safe }}".</p>
+    <p class='description'>
+        Everyone you encounter in Carcosa has <a href="/title/">a ridiculous title</a>.
+    </p>
+</div>
+<div class='hex'>
+    <p class='location'>{{ hex_e }}</p>
     {{ dinosaur.description|safe }}
     <p class='description'>
         Several <a href="/dinosaur/">mutant dinosaurs</a> are described in Carcosa.
     </p>
 </div>
 <div class='hex'>
-    <p class='location'>{{ hex_e }}</p>
+    <p class='location'>{{ hex_f }}</p>
     {{ weird.description|safe }}
     <p class='description'>
         Most hex descriptions in Carcosa are kind of <a href="/weird/">crazy</a>.
