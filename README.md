@@ -10,5 +10,5 @@ TODO:
  * Store generated hex descriptions so people can refer back to them later.
  * Let users describe the races / monsters they expect in their world, and then generate a hex crawl suitable for that world, rather than Carcosa. (Swap out the races of men, etc.)
 
-[1]: http://www.lotfp.com/store/index.php?route=product/product&product_id=145
-[2]: http://save.vs.totalpartykill.ca/tag/carcosa/
+[1]: https://www.lotfp.com/store/index.php?route=product/product&product_id=145
+[2]: https://save.vs.totalpartykill.ca/tag/carcosa/

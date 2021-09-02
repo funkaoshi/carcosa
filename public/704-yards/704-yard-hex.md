@@ -15,7 +15,7 @@ First, pick a 10 mile hex from the large scale _Carcosa_ map. Note its dominant 
 
 ## Creating the Map
 
-Then take a blank hex map sheet. It should have 25 rows, and 33 columns of hexes, or something close to this. [You can find one as of October, 2014, at the Judges Guild website.](http://www.judgesguild.org/downloads/Blank%20Hex%20Sheets.pdf)
+Then take a blank hex map sheet. It should have 25 rows, and 33 columns of hexes, or something close to this. [You can find one as of October, 2014, at the Judges Guild website.](https://www.judgesguild.org/downloads/Blank%20Hex%20Sheets.pdf)
 
 Now consider the dominant terrain of the hex. By this I mean what terrain is actually pictured on the hex in the large scale map? Is it as mix of terrain? 
 
@@ -36,7 +36,7 @@ Using the large scale hex as your guide, fill in one of every six or so hexes wi
 
 For anything else (i.e. clear terrain) I leave the hex blank.
 
-There are software programs that allow you create these maps electronically. Using these programs to create your hex maps will allow easy sharing of them (you don’t have to scan the final product, so the files size will probably be lower). [_Hexographer_](http://www.hexographer.com/) in particular makes this process much easier, but some prefer the look of hand-drawn maps. 
+There are software programs that allow you create these maps electronically. Using these programs to create your hex maps will allow easy sharing of them (you don’t have to scan the final product, so the files size will probably be lower). [_Hexographer_](https://www.hexographer.com/) in particular makes this process much easier, but some prefer the look of hand-drawn maps. 
 
 ## Placing Features
 
