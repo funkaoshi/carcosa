@@ -14,7 +14,7 @@ import weird
 
 
 app = Flask(__name__)
-app.config.from_object(settings)
+app.config.from_prefixed_env()
 
 def random_hex():
     return "%02d%02d" % (dice.d(40), dice.d(40))
