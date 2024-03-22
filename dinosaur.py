@@ -193,8 +193,8 @@ class Dinosaur(object):
     DINOSAURS_NAMES = [name for name in list(DINOSAURS.keys())]
 
     DINOSAURS_BY_HD = collections.defaultdict(list)
-    for name, d in DINOSAURS.items():
-        DINOSAURS_BY_HD[d['HD']].append(name)
+    for name, dino in DINOSAURS.items():
+        DINOSAURS_BY_HD[dino['HD']].append(name)
 
     @property
     def description(self):

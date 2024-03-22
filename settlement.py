@@ -161,7 +161,7 @@ class Leader(object):
                 name = [noun, description]
         else:
             name = [noun, description]
-        if not name[0] in ['He', 'Her', 'It', 'She', 'Lady']:
+        if name[0] not in ['He', 'Her', 'It', 'She', 'Lady']:
             name = ['the'] + name
         return ' '. join(name)
 

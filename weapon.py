@@ -1,5 +1,4 @@
 import random
-from flask import render_template
 
 from dice import d
 
