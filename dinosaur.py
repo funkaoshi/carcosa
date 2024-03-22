@@ -190,10 +190,10 @@ class Dinosaur(object):
         }
     }
 
-    DINOSAURS_NAMES = [name for name in DINOSAURS.keys()]
+    DINOSAURS_NAMES = [name for name in list(DINOSAURS.keys())]
 
     DINOSAURS_BY_HD = collections.defaultdict(list)
-    for name, d in DINOSAURS.iteritems():
+    for name, d in DINOSAURS.items():
         DINOSAURS_BY_HD[d['HD']].append(name)
 
     @property

@@ -19,7 +19,7 @@ def xdcarcosa(x):
         rolled = 10
     elif 16 <= twenty <= 20:
         rolled = 12
-    print {'result': xdy(x, rolled), 'dice': rolled}
+    print({'result': xdy(x, rolled), 'dice': rolled})
 
 def carcosa(n=1):
     rolls = dict((x, d(x)) for x in [4, 6, 8, 10, 12, 20])
@@ -38,4 +38,4 @@ def carcosa(n=1):
 
 
 if __name__ == '__main__':
-    print xdcarcosa(int(sys.argv[1]))
+    print(xdcarcosa(int(sys.argv[1])))

@@ -10,4 +10,4 @@ def colour():
 if __name__ == "__main__":
     import sys
     for _ in range(int(sys.argv[1])):
-        print colour()
+        print(colour())

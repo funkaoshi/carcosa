@@ -166,6 +166,6 @@ class Leader(object):
         return ' '. join(name)
 
 if __name__ == '__main__':
-    for _ in xrange(int(sys.argv[1])):
-        print "%s," % (Leader.get_name(colour.colour())),
+    for _ in range(int(sys.argv[1])):
+        print("%s," % (Leader.get_name(colour.colour())), end=' ')
 
