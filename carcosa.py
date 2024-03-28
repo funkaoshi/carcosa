@@ -1,4 +1,3 @@
-
 from flask import render_template, Flask
 
 import colour
@@ -11,8 +10,10 @@ import weapon
 import weird
 
 
+DEBUG = False
+
 app = Flask(__name__)
-app.config.from_prefixed_env()
+app.config.from_object(__name__)
 
 
 def random_hex():

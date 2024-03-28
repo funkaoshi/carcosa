@@ -38,4 +38,4 @@ def carcosa(n=1):
 
 
 if __name__ == '__main__':
-    print(xdcarcosa(int(sys.argv[1])))
+    print((xdcarcosa(int(sys.argv[1]))))
