@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Carcosan Titles</h1>
+<div class='hex'>
+    <p class='location'>{{ hex }}</p>
+    <p class="description">You meet "{{ title|safe }}".</p>
+    <p class='description'>
+        Everyone you encounter in Carcosa has a ridiculous title.
+    </p>
+</div>
+{% endblock %}
